@@ -52,16 +52,16 @@ const removeCard = () => {
 
 const assignButton = document.getElementById("assign-member");
 assignButton.addEventListener("click", () => {
-  for (let i = 0; i < arrayOfNames.length; i++) {
+  let length = arrayOfNames.length;
+  for (let i = 0; i < length; i++) {
     //checks the length of the array and loops over it
     const randomIndex = Math.floor(Math.random() * arrayOfNames.length); //generates a random index
     const pickedName = arrayOfNames[randomIndex].innerText; //picks and stores a random name from the Array
     const teamListContainer = document.querySelectorAll("#team-list-container"); //targetting the team cards
-    console.log(teamListContainer);
     const assignedName = document.createElement("li"); //creating an li element
     assignedName.innerText = pickedName; //assigning to the li, the previously stored pickedName
     teamListContainer[i % teamListContainer.length].appendChild(assignedName); //appends the li to the container
-    // arrayOfNames.splice(randomIndex,1);
+    arrayOfNames.splice(randomIndex, 1);
   }
 });
 

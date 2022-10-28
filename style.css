@@ -66,6 +66,10 @@ h1 {
   transition: transform 0.2s;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 #add-button:hover {
   transform: scale(1.05);
 }
