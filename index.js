@@ -52,15 +52,15 @@ const removeCard = () => {
 
 const assignButton = document.getElementById("assign-member");
 assignButton.addEventListener("click", () => {
-  const cards = document.getElementsByClassName("cards");
-
   for (let i = 0; i < arrayOfNames.length; i++) {
-    const randomIndex = Math.floor(Math.random() * arrayOfNames.length);
-    console.log(randomIndex);
+    let arrayOfRandom = [];
+    let randomIndex;
+    if (arrayOfRandom.includes(randomIndex) == true) {
+      randomIndex = Math.floor(Math.random() * arrayOfNames.length);
+    }
+
     const pickedName = arrayOfNames[randomIndex].innerText;
-    console.log(pickedName);
     const teamListContainer = document.querySelectorAll("#team-list-container");
-    console.log(teamListContainer);
 
     for (let j = 0; j < teamListContainer.length; j++) {
       const assignedName = document.createElement("li");
@@ -73,7 +73,6 @@ assignButton.addEventListener("click", () => {
 });
 
 const resetButton = document.getElementById("reset");
-console.log(resetButton);
 resetButton.addEventListener("click", () => {
   const teamListContainer = document.querySelectorAll("#team-list-container");
   const namesList = document.querySelectorAll("#names-list");
